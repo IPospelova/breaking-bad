@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <top-nav></top-nav>
+    <top-nav class="bor-b"></top-nav>
     <div class="row">
       <div class="col-md-3">
         <sidebar></sidebar>

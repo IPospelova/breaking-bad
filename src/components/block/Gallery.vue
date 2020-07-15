@@ -61,6 +61,31 @@ export default {
           name: 'Walter White5',
           birthday: '09-07-1959'
         }
+      ],
+      seasons: [
+        {
+          ingSrc:
+            'https://img2.goodfon.ru/wallpaper/nbig/5/bf/breaking-bad-bryan-cranston-6290.jpg',
+          title: 'season 1'
+        },
+        {
+          ingSrc: 'https://images.vfl.ru/ii/1560181145/4c6d59be/26844233.jpg',
+          title: 'season 2'
+        },
+        {
+          ingSrc: 'https://region.center/source/VLADIMIR/2019/chp/64646.jpg',
+          title: 'season 3'
+        },
+        {
+          ingSrc:
+            'https://a-static.besthdwallpaper.com/breaking-bad-4-tapet-800x1280-9580_198.jpg',
+          title: 'season 4'
+        },
+        {
+          ingSrc:
+            'https://mediacritys.files.wordpress.com/2010/09/breaking62.jpg',
+          title: 'season 5'
+        }
       ]
     }
   }

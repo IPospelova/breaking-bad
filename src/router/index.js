@@ -13,6 +13,21 @@ const routes = [
     path: '/seasons',
     name: 'seasons',
     component: () => import('../components/pages/Seasons')
+  },
+  {
+    path: '/episodes',
+    name: 'episodes',
+    component: () => import('../components/pages/Episodes')
+  },
+  {
+    path: '/quote',
+    name: 'quote',
+    component: () => import('../components/pages/Quote')
+  },
+  {
+    path: '/deaths',
+    name: 'deaths',
+    component: () => import('../components/pages/Deaths')
   }
   // {
   //   path: '/about',
