@@ -6,7 +6,7 @@
         <sidebar></sidebar>
       </div>
       <div class="col-md-9">
-        <h2 class="title">Characters</h2>
+        <h2 class="title">Seasons</h2>
         <gallery></gallery>
       </div>
     </div>
@@ -19,7 +19,7 @@ import Sidebar from '@/components/block/Sidebar.vue'
 import Gallery from '@/components/block/Gallery.vue'
 
 export default {
-  name: 'Characters',
+  name: 'Seasons',
   components: {
     'top-nav': Topnav,
     sidebar: Sidebar,
