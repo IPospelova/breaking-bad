@@ -35,7 +35,7 @@ export default {
         },
         {
           imgSrc:
-            'https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg',
+            'https://majdkhatib.com/wp-content/uploads/2018/03/Breaking-Bad-Walter-White1.jpg?x72778',
           nike: 'Heisenberg2',
           name: 'Walter White2',
           birthday: '09-07-1956'
@@ -49,7 +49,7 @@ export default {
         },
         {
           imgSrc:
-            'https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg',
+            'https://majdkhatib.com/wp-content/uploads/2018/03/Breaking-Bad-Walter-White1.jpg?x72778',
           nike: 'Heisenberg4',
           name: 'Walter White4',
           birthday: '09-07-1958'
