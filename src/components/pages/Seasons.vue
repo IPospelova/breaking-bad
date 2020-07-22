@@ -7,7 +7,9 @@
       </div>
       <div class="col-md-9">
         <h2 class="title">Seasons</h2>
-        <gallery></gallery>
+        <gallery
+          :class="{ 'gallery__card--season': $route.path === '/seasons' }"
+        ></gallery>
       </div>
     </div>
   </div>
