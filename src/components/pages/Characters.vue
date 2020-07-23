@@ -7,8 +7,12 @@
       </div>
       <div class="col-md-9">
         <h2 class="title">Characters</h2>
-        <button class="btn" @click="filterByAlive()">Filter by alive</button>
-        <gallery :characters="characters"></gallery>
+        <button class="btn" @click="filter = 'Alive'">alive</button>
+        <button class="btn" @click="filter = 'Deceased'">deceased</button>
+        <button class="btn" @click="filter = 'better_call_saul_appearance'">
+          Better Call Saul
+        </button>
+        <gallery :characters="filtredListByStatus"></gallery>
       </div>
     </div>
   </div>
@@ -28,6 +32,7 @@ export default {
   },
   data() {
     return {
+      filter: '',
       characters: [
         {
           char_id: 1,
@@ -321,10 +326,22 @@ export default {
       ]
     }
   },
+  computed: {
+    filtredListByStatus() {
+      if (this.filter === '') return this.characters
+      return this.filterByStatus(this.characters, this.filter)
+    }
+  },
   methods: {
-    filterByAlive() {
-      this.characters = this.characters.filter(el => el.status === 'Alive')
-      return this.characters
+    filterByStatus(characrets, filter) {
+      if (filter === 'better_call_saul_appearance')
+        return (this.filtredList = this.characters.filter(
+          el => el.better_call_saul_appearance.length !== 0
+        ))
+
+      return (this.filtredList = this.characters.filter(
+        el => el.status === filter
+      ))
     }
   }
 }
