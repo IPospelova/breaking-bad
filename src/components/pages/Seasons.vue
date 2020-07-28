@@ -7,7 +7,14 @@
       </div>
       <div class="col-md-9">
         <h2 class="title">Seasons</h2>
-        <gallery :characters="seasons"></gallery>
+        <button class="btn" @click="filter = 'Krazy-8'">Krazy-8</button>
+        <button class="btn" @click="filter = '03-09-2008'">
+          03-09-2008
+        </button>
+        <button class="btn" @click="filter = 'oddId'">
+          odd id
+        </button>
+        <gallery :characters="filtredListByStatus"></gallery>
       </div>
     </div>
   </div>
@@ -27,6 +34,7 @@ export default {
   },
   data() {
     return {
+      filter: '',
       seasons: [
         {
           episode_id: 1,
@@ -317,6 +325,30 @@ export default {
             'https://m.media-amazon.com/images/M/MV5BMTk1MTI3NjY1Ml5BMl5BanBnXkFtZTgwMTk2MDU5NTM@._V1_UX224_CR0,0,224,126_AL_.jpg'
         }
       ]
+    }
+  },
+  computed: {
+    // filtredListByStatus() {
+    //   if (this.filter === '') return this.characters
+    //   return this.filterByStatus(this.characters, this.filter)
+    // }
+    filtredListByStatus() {
+      if (this.filter === '') return this.seasons
+      if (this.filter === 'Krazy-8') return this.filterByKrazy(this.seasons)
+      if (this.filter === '03-09-2008') return this.sortByDate(this.seasons)
+      if (this.filter === 'oddId') return this.sortById(this.seasons)
+      return this.seasons
+    }
+  },
+  methods: {
+    filterByKrazy(list) {
+      return list.filter(el => el.characters.includes('Krazy-8'))
+    },
+    sortByDate(list) {
+      return list.filter(el => new Date(el.air_date) > new Date('03-09-2008'))
+    },
+    sortById(list) {
+      return list.filter(el => el.episode_id % 2 != 0)
     }
   }
 }

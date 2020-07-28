@@ -7,6 +7,7 @@
       </div>
       <div class="col-md-9">
         <h2 class="title">Characters</h2>
+        <button class="btn" @click="filter = ''">all</button>
         <button class="btn" @click="filter = 'Alive'">alive</button>
         <button class="btn" @click="filter = 'Deceased'">deceased</button>
         <button class="btn" @click="filter = 'better_call_saul_appearance'">
@@ -335,14 +336,30 @@ export default {
   methods: {
     filterByStatus(characrets, filter) {
       if (filter === 'better_call_saul_appearance')
-        return (this.filtredList = this.characters.filter(
+        return characrets.filter(
           el => el.better_call_saul_appearance.length !== 0
-        ))
+        )
 
-      return (this.filtredList = this.characters.filter(
-        el => el.status === filter
-      ))
+      return characrets.filter(el => el.status === filter)
     }
+    // let filterCharacters = []
+    //   if (filter === 'better_call_saul_appearance')
+    //     return (filterCharacters = characrets.filter(
+    //       el => el.better_call_saul_appearance.length !== 0
+    //     ))
+
+    //   return (filterCharacters = characrets.filter(el => el.status === filter))
+    // }
+    // filterByStatus(characrets, filter) {
+    //   if (filter === 'better_call_saul_appearance')
+    //     return (this.filtredList = this.characters.filter(
+    //       el => el.better_call_saul_appearance.length !== 0
+    //     ))
+
+    //   return (this.filtredList = this.characters.filter(
+    //     el => el.status === filter
+    //   ))
+    // }
   }
 }
 </script>
