@@ -6,6 +6,7 @@
           v-for="item in pages"
           :key="item.id"
           :to="item.link"
+          :class="{ active: $route.path === item.link }"
           class="link link--navbar"
           >{{ item.page }}</router-link
         >
