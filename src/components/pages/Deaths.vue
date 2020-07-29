@@ -7,7 +7,7 @@
       </div>
       <div class="col-md-9">
         <h2 class="title">Deaths</h2>
-        <gallery></gallery>
+        <gallery :characters="characters"></gallery>
       </div>
     </div>
   </div>
@@ -20,6 +20,7 @@ import Gallery from '@/components/block/Gallery.vue'
 
 export default {
   name: 'Deaths',
+
   components: {
     'top-nav': Topnav,
     sidebar: Sidebar,
