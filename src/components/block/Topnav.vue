@@ -6,7 +6,7 @@
           v-for="item in pages"
           :key="item.id"
           :to="item.link"
-          :class="{ active: $route.path === item.link }"
+          :class="addClassActive(item)"
           class="link link--navbar"
           >{{ item.page }}</router-link
         >
@@ -27,6 +27,51 @@ export default {
         { link: '/quote', page: 'quote' },
         { link: '/deaths', page: 'deaths' }
       ]
+    }
+  },
+  computed: {
+    // links() {
+    //   this.pages.forEach(el =>
+    //     el.link === this.$route.path
+    //       ? (el.activeClass = 'active')
+    //       : (el.activeClass = '')
+    //   )
+    //   return this.pages
+    // }
+    //AddActiveClass() {
+    //let links = [],
+    // let isMobile = 99
+    // const user = { name: 'vasja', surname: 'ivanov' }
+    // user.tel = '921-330-24-10'
+    // user.tel = isMobile == true ? '921-330-24-10' : '821 - 921....'
+    // user.tel = isMobile ? '921-330-24-10' : '821 - 921....'
+    // user.tel = isMobile > 100 ? '921-330-24-10' : '821 - 921....'
+    //let links = this.pages,
+    //links.classActive = links.link === this.$route.path ? 'active' : ''
+    // return (links = this.pages
+    //   .forEach(el
+    //  => el.link === this.$route.path)
+    //   .class: active)
+    //}
+    //   AddActiveClass() {
+    //     console.log('bla bla')
+    //     console.log(
+    //       'computed: ',
+    //       this.pages.forEach(el => {
+    //         if (el.link === this.$route.path) return false
+    //       })
+    //     )
+    //     return {
+    //       active: this.pages.forEach(el => {
+    //         if (el.link === this.$route.path) return false
+    //       })
+    //     }
+    //   }
+  },
+  methods: {
+    addClassActive(item) {
+      if (item.link === this.$route.path) return 'active'
+      return ''
     }
   }
 }
