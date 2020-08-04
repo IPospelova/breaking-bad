@@ -3,10 +3,10 @@
     <div class="container">
       <nav class="nav nav--navbar">
         <router-link
-          v-for="item in pages"
+          v-for="item in links"
           :key="item.id"
           :to="item.link"
-          :class="addClassActive(item)"
+          :class="item.activeClass"
           class="link link--navbar"
           >{{ item.page }}</router-link
         >
@@ -30,14 +30,14 @@ export default {
     }
   },
   computed: {
-    // links() {
-    //   this.pages.forEach(el =>
-    //     el.link === this.$route.path
-    //       ? (el.activeClass = 'active')
-    //       : (el.activeClass = '')
-    //   )
-    //   return this.pages
-    // }
+    links() {
+      this.pages.forEach(el =>
+        el.link === this.$route.path
+          ? (el.activeClass = 'active')
+          : (el.activeClass = '')
+      )
+      return this.pages
+    }
     //AddActiveClass() {
     //let links = [],
     // let isMobile = 99
@@ -69,10 +69,10 @@ export default {
     //   }
   },
   methods: {
-    addClassActive(item) {
-      if (item.link === this.$route.path) return 'active'
-      return ''
-    }
+    // addClassActive(item) {
+    //   if (item.link === this.$route.path) return 'active'
+    //   return ''
+    // }
   }
 }
 </script>
