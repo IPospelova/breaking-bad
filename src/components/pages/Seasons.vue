@@ -328,10 +328,6 @@ export default {
     }
   },
   computed: {
-    // filtredListByStatus() {
-    //   if (this.filter === '') return this.characters
-    //   return this.filterByStatus(this.characters, this.filter)
-    // }
     filtredListByStatus() {
       if (this.filter === '') return this.seasons
       if (this.filter === 'Krazy-8') return this.filterByKrazy(this.seasons)
