@@ -24,6 +24,7 @@
 import Topnav from '@/components/block/Topnav.vue'
 import Sidebar from '@/components/block/Sidebar.vue'
 import Gallery from '@/components/block/Gallery.vue'
+import axios from 'axios'
 
 export default {
   name: 'Seasons',
@@ -35,7 +36,8 @@ export default {
   data() {
     return {
       filter: '',
-      seasons: [
+      seasons: [],
+      seasonsOld: [
         {
           episode_id: 1,
           title: 'Pilot',
@@ -327,6 +329,9 @@ export default {
       ]
     }
   },
+  created() {
+    this.getSeasons()
+  },
   computed: {
     filtredListByStatus() {
       if (this.filter === '') return this.seasons
@@ -345,6 +350,16 @@ export default {
     },
     sortById(list) {
       return list.filter(el => el.episode_id % 2 != 0)
+    },
+    async getSeasons() {
+      const answer = await axios(`https://www.breakingbadapi.com/api/episodes`)
+      this.seasons = answer.data.slice(0, 15)
+      this.seasons.map(el => {
+        el.img = this.seasonsOld.find(
+          link => link.episode_id === el.episode_id
+        ).imgSrc
+      })
+      return this.seasons
     }
   }
 }

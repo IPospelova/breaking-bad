@@ -351,7 +351,7 @@ export default {
       const answer = await axios(
         `https://www.breakingbadapi.com/api/characters`
       )
-      return (this.characters = answer.data)
+      return (this.characters = answer.data.slice(0, 20))
       console.log(answer.data)
     }
     // let filterCharacters = []

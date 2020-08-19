@@ -11,7 +11,7 @@
             class="gallery__img-wrap"
             :class="{ 'gallery__img-wrap--season': $route.path === '/seasons' }"
           >
-            <img :src="character.imgSrc" alt="" class="gallery__img" />
+            <img :src="character.img" alt="" class="gallery__img" />
           </div>
           <div v-if="$route.path === '/'" class="gallery__bottom">
             <h3 class="gallery__nick">nike {{ character.nickname }}</h3>
